@@ -18,14 +18,12 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    const newArr = [];
-    arr.map((a) => {
-        if(a.type === `dog`){
-            newArr.push(a);
+    return arr.filter((a) => a.type === 'dog');
 
-        }
-    }); 
+           
 
+        
+  
 }
 /*
 Output:
@@ -34,7 +32,10 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map((a) => a.name);
+        
+    
+    
 }
 
 /*
@@ -43,7 +44,14 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    const newArr = [];
+
+    arr.map((a) => {
+        if(a.type === `dog`){
+            newArr.push(a.name);
+        }
+    });
+    return newArr;
 }
 
 /*
@@ -53,7 +61,11 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    const newArr = [];
+    arr.map((a) => {
+        newArr.unshift(a.type);
+    });
+    return newArr;
 }
 
 /*
@@ -68,7 +80,14 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    const newArr = [];
+    arr.map((a) => {
+        newArr.push({
+            nombre: a.name,
+            tipo: a.type,
+        });
+    });
+    return newArr;
 }
 
 /*
@@ -82,7 +101,12 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-    return []
+    return arr.map(a => {
+        const temp = { ...a };
+        temp.isHungry = true;
+        
+        return temp;
+    }); 
 }
 
 /*
@@ -96,7 +120,12 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    return arr.map(a => {
+        const temp = { ...a };
+        temp.name = temp.name.toUpperCase();
+
+        return temp;
+    });
 }
 
 
@@ -107,7 +136,11 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    const newArr = [];
+    arr.map((a) => {
+        newArr.push(a.name + a.type);
+    });
+    return newArr;
 }
 
 /*
@@ -120,7 +153,11 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    for(let a of arr){
+        if(name === a.name){
+            return a;
+        }
+    }
 }
 
 /*
@@ -146,7 +183,12 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    return arr.map((a) => {
+        const newArr = [];
+        newArr.push([`name`, a.name], [`type`, a.type]);
+
+        return newArr;
+    });
 }
 
 ////////////////////////////////////////////////////////
@@ -175,7 +217,13 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    const newArr = [];
+    arr.map(a => {
+        if(a.type === `car`){
+            newArr.push(a);
+        }
+    });
+    return newArr;
 }
 
 /*
@@ -188,7 +236,9 @@ Output:
 */
 
 export function getChevyCars(arr) {
-    return [];
+    return arr.filter(a => {
+        if(a.type === `car` && a.make === `chevy`) return a;
+    });
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
