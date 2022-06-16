@@ -18,9 +18,15 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
-}
+    const newArr = [];
+    arr.map((a) => {
+        if(a.type === `dog`){
+            newArr.push(a);
 
+        }
+    }); 
+
+}
 /*
 Output:
 
@@ -76,7 +82,7 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-     return []
+    return []
 }
 
 /*
